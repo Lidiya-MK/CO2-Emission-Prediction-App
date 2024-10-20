@@ -1,17 +1,16 @@
-# CO2 Emission Prediction App
+# CO2 Emission Prediction App 🌍💨
 
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/389305ae-b11e-4dc2-8ac4-a694e90922b1">
 
-
-## Overview
+## Overview 🚀
 
 This project is a web application that predicts CO2 emissions based on vehicle volume and weight. Built with Flask, the app uses a trained machine learning model to provide predictions and visualize the data, making it easy to understand the impact of vehicle specifications on emissions.
 
-## Dataset
+## Dataset 📊
 
 The dataset used for this project was sourced from Kaggle. It contains information about various vehicles, including their volume, weight, and CO2 emissions. The data underwent a thorough cleaning process to ensure accuracy and reliability.
 
-## Data Cleaning Process
+## Data Cleaning Process 🧹
 
 The data cleaning process involved the following steps:
 
@@ -22,7 +21,7 @@ The data cleaning process involved the following steps:
 
 ![Data Visualization](static/co2_plot.png)
 
-## Tech Stack
+## Tech Stack 🛠️
 
 - **Frontend:** HTML, CSS
 - **Backend:** Flask
@@ -31,12 +30,12 @@ The data cleaning process involved the following steps:
 - **Data Handling:** Pandas
 - **Model Serialization:** Joblib
 
-## Getting Started
+## Getting Started ⚙️
 
 To run the application locally, follow these steps:
 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/ CO2-Emission-Prediction-App.git
-   py app.py
+   git clone https://github.com/yourusername/CO2-Emission-Prediction-App.git
+   cd CO2-Emission-Prediction-App
