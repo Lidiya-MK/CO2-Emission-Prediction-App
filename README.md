@@ -39,4 +39,4 @@ To run the application locally, follow these steps:
 
    ```bash
    git clone https://github.com/yourusername/co2-emission-prediction.git
-   cd co2-emission-prediction
+   py app.py
