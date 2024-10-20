@@ -3,143 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <title>Coffee Price Prediction</title>
+    <title>CO2 Prediction</title>
     <style>
         body {
-            font-family: "Afacad Flux", sans-serif;
-            font-optical-sizing: auto;
-            background-image: url('https://images.unsplash.com/photo-1613674768015-96f159a6c147?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            color: #fff;
+            padding: 0;
         }
+
         .container {
-            background-color: rgba(0, 0, 0, 0.75);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
-            font-size: 26px;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        input[type="number"] {
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
             text-align: center;
+            color: #333;
         }
-     
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
         }
-  
-        input[type="number"] {
-            -moz-appearance: textfield;
+
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        button {
-            padding: 12px;
-            background-color: #d9ba76;
-            color: rgb(50, 48, 35);
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-        button:hover {
-            background-color: #5f521c;
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
-        .error {
-            color: red;
-            font-size: 14px;
-            margin-top: -10px;
-        }
+
         .result {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
             margin-top: 20px;
-            font-size: 20px;
-            color: #FFD700;
-            font-weight: 500;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
         }
     </style>
+    <script>
+        function showResult() {
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Predict Coffee Opening Price</h1>
-        <form id="predictionForm">
-            <label for="year">Enter Production Year:</label>
-            <input type="number" name="year" id="year" placeholder="e.g., 2020" required min="2000" max="2100">
-            <span class="error" id="error"></span>
-            <button type="submit">Predict</button>
+        <h1>CO2 Emission Prediction</h1>
+        <form action="/predict" method="post" onsubmit="showResult()">
+            <label for="volume">Volume (in cm³):</label>
+            <input type="number" id="volume" name="volume" required min="1000" max="5000" step="any" placeholder="e.g., 1000 - 5000">
+            <br>
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" required min="700" max="2000" step="any" placeholder="e.g., 700 - 2000">
+            <br>
+            <input type="submit" value="Predict">
         </form>
 
-        <div class="result" id="result"></div>
+        {% if prediction is not none %}
+        <div id="result" class="result" style="display: block;"> 
+            <strong>The predicted CO2 emission is: {{ prediction }} g/km</strong>
+        </div>
+        {% endif %}
+
+        <img src="{{ url_for('static', filename='co2_plot.png') }}" alt="CO2 Emissions Plot">
     </div>
-
-    <script>
-        const form = document.getElementById('predictionForm');
-        const yearInput = document.getElementById('year');
-        const errorElement = document.getElementById('error');
-        const resultElement = document.getElementById('result');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();  
-
-            const yearValue = yearInput.value;
-            if (yearValue < 2000 || yearValue > 2100) {
-                errorElement.textContent = 'Please enter a year between 2000 and 2100.';
-                return;
-            } else {
-                errorElement.textContent = '';  
-            }
-
-            fetch('/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    'year': yearValue
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-               
-                if (data.predicted_price) {
-                    resultElement.textContent = `Predicted Coffee Price: ${data.predicted_price} ETB`;
-                } else {
-                    resultElement.textContent = 'Error: ' + (data.error || 'Unknown error');
-                }
-            })
-            .catch(error => {
-                resultElement.textContent = 'An error occurred: ' + error.message;
-            });
-        });
-    </script>
 </body>
 </html>
