@@ -23,12 +23,17 @@ The data cleaning process involved the following steps:
 
 ## Tech Stack 🛠️
 
-- **Frontend:** HTML, CSS
-- **Backend:** Flask
-- **Machine Learning:** Scikit-learn
-- **Data Visualization:** Matplotlib
-- **Data Handling:** Pandas
-- **Model Serialization:** Joblib
+Here are the technologies used in this project:
+
+| Technology        | Logo                                                                 |
+|-------------------|----------------------------------------------------------------------|
+| **Frontend**      | ![HTML Logo](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg) |
+|                   | ![CSS Logo](https://upload.wikimedia.org/wikipedia/commons/3/3c/CSS3_logo.svg)                  |
+| **Backend**       | ![Flask Logo](https://flask.palletsprojects.com/en/2.0.x/_static/flask.svg)                  |
+| **Machine Learning** | ![Scikit-learn Logo](https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png)   |
+| **Data Visualization** | ![Matplotlib Logo](https://matplotlib.org/stable/_static/images/logo2.svg)                  |
+| **Data Handling** | ![Pandas Logo](https://pandas.pydata.org/pandas-docs/stable/_static/pandas_logo.svg)         |
+| **Model Serialization** | ![Joblib Logo](https://joblib.readthedocs.io/en/latest/_static/joblib_logo.svg)           |
 
 ## Getting Started ⚙️
 
