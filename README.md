@@ -38,5 +38,5 @@ To run the application locally, follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/co2-emission-prediction.git
+   git clone https://github.com/yourusername/ CO2-Emission-Prediction-App.git
    py app.py
