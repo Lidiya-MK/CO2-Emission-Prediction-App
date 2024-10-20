@@ -19,7 +19,7 @@ The data cleaning process involved the following steps:
 3. **Data Type Conversion:** Columns were converted to numeric types to ensure proper processing.
 4. **Visualizing Data:** A scatter plot was created to illustrate the relationship between vehicle volume, weight, and CO2 emissions.
 
-<img src="static/co2_plot.png" alt="Data Visualization" width="400">
+<img src="static/co2_plot.png" alt="Data Visualization" width="600">
 
 ## Tech Stack 🛠️
 
