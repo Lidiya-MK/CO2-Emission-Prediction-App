@@ -18,8 +18,8 @@ The data cleaning process involved the following steps:
 2. **Handling Missing Values:** Rows with missing values in critical columns (Volume, Weight, CO2) were removed.
 3. **Data Type Conversion:** Columns were converted to numeric types to ensure proper processing.
 4. **Visualizing Data:** A scatter plot was created to illustrate the relationship between vehicle volume, weight, and CO2 emissions.
+<img width="600" alt="image" src=![Data Visualization](static/co2_plot.png)>
 
-![Data Visualization](static/co2_plot.png)
 
 ## Tech Stack 🛠️
 
