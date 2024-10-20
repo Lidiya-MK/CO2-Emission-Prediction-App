@@ -1,6 +1,6 @@
 # CO2 Emission Prediction App 🌍💨
 
-<img width="956" alt="image" src="https://github.com/user-attachments/assets/389305ae-b11e-4dc2-8ac4-a694e90922b1">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/389305ae-b11e-4dc2-8ac4-a694e90922b1">
 
 ## Overview 🚀
 
