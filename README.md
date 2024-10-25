@@ -8,6 +8,7 @@ This project is a web application that predicts CO2 emissions based on vehicle v
 
 ## Dataset 📊
 
+
 The dataset used for this project was sourced from Kaggle. It contains information about various vehicles, including their volume, weight, and CO2 emissions. The data underwent a thorough cleaning process to ensure accuracy and reliability.
 
 ## Data Cleaning Process 🧹
