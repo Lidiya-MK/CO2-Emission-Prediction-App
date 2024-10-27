@@ -4,7 +4,7 @@
 
 ## Overview 🚀
 
-This project is a web application that predicts CO2 emissions based on vehicle volume and weight. Built with Flask, the app uses a trained machine learning model to provide predictions and visualize the data, making it easy to understand the impact of vehicle specifications on emissions.
+This project is a web application that predicts CO2 emissions based on vehicle volume and weight. Built with Flask, the app uses a multiple linear regression model to provide predictions and visualize the data, making it easy to understand the impact of vehicle specifications on emissions.
 
 ## Dataset 📊
 
